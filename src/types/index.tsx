@@ -19,3 +19,9 @@ export interface buttonProps {
   actionButton?: boolean;
   bgColor?: string;
 }
+export interface todoProps {
+  id: string;
+  title?: string | null;
+  isDone: boolean;
+  createdAt?: Date;
+}
