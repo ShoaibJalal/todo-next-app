@@ -18,14 +18,16 @@ async function getData() {
 export default async function Home() {
   const data = await getData();
   return (
-    <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-gray-950 text-zinc-50 min-h-[80vh] md:w-[55%]">
+    <div className="w-screen py-20 flex justify-center flex-col items-center bg-gray-950 text-zinc-50 min-h-screen">
       <h1 className="font-bold text-center text-3xl">Todo App</h1>
       <div className="flex justify-center flex-col items-center m-3">
         <AddTodo />
         <div className="flex flex-col gap-5 items-center justify-center mt-10 w-screen">
           {data.map((todo, id) => (
-            <div className={todo.isDone ? "line-through" : ""} key={id}>
-              <Todo todo={todo} />
+            <div className="w-full" key={id}>
+              <div className={todo.isDone ? "line-through" : ""} >
+                <Todo todo={todo} />
+              </div>
             </div>
           ))}
         </div>
